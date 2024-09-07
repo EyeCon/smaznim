@@ -3,8 +3,8 @@ This is a [Nim language](https://nim-lang.org/) wrapper for the [smaz short text
 
 # API
 ```nim
-proc compress*(s: string): string
-proc decompress*(s: string): string
+proc compress*(s: openArray[char]): string
+proc decompress*(s: openArray[char]): string
 ```
 
 # Preparation

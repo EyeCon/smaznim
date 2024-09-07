@@ -5,7 +5,7 @@ proc smaz_decompress*(inbuffer: cstring; len: csize_t; outbuffer: cstring;
                         bufsize: csize_t): csize_t {.importc: "smaz_decompress", header: "smaz.h".}
 
 
-proc compress*(s: string): string =
+proc compress*(s: openArray[char]): string =
   let
     inBufSize = s.len.csize_t
     outBufSize = inBufSize
@@ -18,7 +18,7 @@ proc compress*(s: string): string =
   outBuf.setlen(outSize)
   return outBuf
 
-proc decompress*(s: string): string =
+proc decompress*(s: openArray[char]): string =
   let
     inBufSize = s.len.csize_t
     outBufSize = inBufSize * 2
